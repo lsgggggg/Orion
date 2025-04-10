@@ -1,0 +1,23 @@
+cd ~/python_on_hyy/Graph-WaveNet
+python process_data_for_graphwavenet.py --data_dir /root/python_on_hyy/data --output_dir data/processed
+
+
+假设你在 Graph WaveNet 仓库目录下（~/python_on_hyy/Graph-WaveNet），为每个数据集运行以下命令：
+
+PEMS03：
+python train.py --data data/processed/PEMS03_graphwavenet.npz --adjdata data/processed/PEMS03_adj_mx.pkl --num_nodes 358 --gcn_bool --addaptadj --epochs 50 --batch_size 256 --learning_rate 0.0001
+
+PEMS04：
+python train.py --data data/processed/PEMS04_graphwavenet.npz --adjdata data/processed/PEMS04_adj_mx.pkl --num_nodes 307 --gcn_bool --addaptadj --epochs 50 --batch_size 256 --learning_rate 0.0001
+
+PEMS08：
+python train.py --data data/processed/PEMS08_graphwavenet.npz --adjdata data/processed/PEMS08_adj_mx.pkl --num_nodes 170 --gcn_bool --addaptadj --epochs 2 --batch_size 256 --learning_rate 0.0001
+
+NYCBike2_part1
+python train.py --data data/processed/NYCBike2_part1_graphwavenet.npz --adjdata data/processed/NYCBike2_part1_adj_mx.pkl --num_nodes 200 --gcn_bool --addaptadj --epochs 50 --batch_size 256 --learning_rate 0.0001
+
+NYCTaxi_part1：
+python train.py --data data/processed/NYCTaxi_part1_graphwavenet.npz --adjdata data/processed/NYCTaxi_part1_adj_mx.pkl --num_nodes 200 --gcn_bool --addaptadj --epochs 50 --batch_size 256 --learning_rate 0.0001
+
+Taxi_BJ_hist12_pred12_group1：
+python train.py --data data/processed/Taxi_BJ_hist12_pred12_group1_graphwavenet.npz --adjdata data/processed/Taxi_BJ_hist12_pred12_group1_adj_mx.pkl --num_nodes 128 --gcn_bool --addaptadj --epochs 50 --batch_size 256 --learning_rate 0.0001
