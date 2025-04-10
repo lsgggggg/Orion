@@ -1,4 +1,11 @@
+
 # Orion 模型 README 📖
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Orion-v1.0-blue?style=flat-square" alt="Version">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License">
+  <img src="https://img.shields.io/badge/PyTorch-1.12.0-orange?style=flat-square" alt="PyTorch">
+</p>
 
 欢迎体验 **Orion** 模型！这是一个专为时空数据预测任务打造的深度学习框架，融合了动态图注意力网络和多周期融合机制，旨在高效处理交通流量、城市出行需求等复杂时空序列数据。本文档将为您提供详细的模型介绍、使用指南及运行步骤，助您快速上手！🚀
 
@@ -14,6 +21,12 @@
 - **MHSA Fusion Block**：包含注意力机制的多周期融合模块，融合不同周期（Recent、Daily、Weekly）的特征，增强模型对周期性模式的捕捉能力。
 
 Orion 模型支持分布式训练（DistributedDataParallel, DDP），可以在多 GPU 环境下高效运行，同时提供注意力权重的可视化功能，便于模型解释和调试。
+
+<p align="center">
+  <img src="https://via.placeholder.com/600x300.png?text=Orion+Model+Architecture" alt="Orion Model Architecture" width="600">
+  <br>
+  <em>Orion 模型架构图（请替换为实际图片链接）</em>
+</p>
 
 ### 适用场景
 - 交通流量预测（如 PEMS 数据集）
@@ -263,7 +276,7 @@ Orion 支持单 GPU 和多 GPU 训练。
   ```
 
 #### Baseline 模型
-Baseline 模型的运行指令请参见相应目录下的“运行指令.txt”文件，例如：
+Baseline 模型的运行指令请参见相应目录下的“运行指令.txt”文件 TEMPORARY，例如：
 - `baseline/ASTGCN/运行指令.txt`
 - `baseline/DCRNN/运行指令.txt`
 
@@ -333,7 +346,6 @@ Orion 模型支持注意力权重的可视化（需在配置文件中启用）�
 - **GAT 注意力权重**：空间注意力热力图。
 - **Temporal 注意力权重**：时间注意力热力图。
 - **Fusion 注意力权重**：周期融合注意力热力图。
-```
 
 ---
 
@@ -348,7 +360,7 @@ Orion 模型支持注意力权重的可视化（需在配置文件中启用）�
 
 祝您实验顺利，取得优异成果！🎉
 
---- 
+---
 
 **Orion 团队**  
 **2025年4月**
