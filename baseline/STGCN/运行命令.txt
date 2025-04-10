@@ -1,0 +1,25 @@
+
+cd /root/STGCN_IJCAI-18
+python prepare_data_for_stgcn.py
+
+export CUDA_VISIBLE_DEVICES=0  # 使用单卡 GPU
+
+cd /root/STGCN_IJCAI-18
+
+# PEMS03: 5 min, 1 feature, 358 nodes
+python main.py --dataset PEMS03 --n_route 358 --n_his 12 --n_pred 12 --batch_size 32 --epoch 50 --save 10 --ks 3 --kt 3 --lr 1e-4 --opt RMSProp --inf_mode merge --time_interval 5 --features 1
+
+# PEMS04: 5 min, 3 features, 307 nodes
+python main.py --dataset PEMS04 --n_route 307 --n_his 12 --n_pred 12 --batch_size 32 --epoch 50 --save 10 --ks 3 --kt 3 --lr 1e-4 --opt RMSProp --inf_mode merge --time_interval 5 --features 3
+
+# PEMS08: 5 min, 3 features, 170 nodes
+python main.py --dataset PEMS08 --n_route 170 --n_his 12 --n_pred 12 --batch_size 32 --epoch 50 --save 10 --ks 3 --kt 3 --lr 1e-4 --opt RMSProp --inf_mode merge --time_interval 5 --features 3
+
+# NYCBike2_part1: 30 min, 4 features, 200 nodes
+python main.py --dataset NYCBike2_part1 --n_route 200 --n_his 12 --n_pred 12 --batch_size 32 --epoch 50 --save 10 --ks 3 --kt 3 --lr 1e-4 --opt RMSProp --inf_mode merge --time_interval 30 --features 4
+
+# NYCTaxi_part1: 30 min, 3 features, 200 nodes
+python main.py --dataset NYCTaxi_part1 --n_route 200 --n_his 12 --n_pred 12 --batch_size 32 --epoch 50 --save 10 --ks 3 --kt 3 --lr 1e-4 --opt RMSProp --inf_mode merge --time_interval 30 --features 3
+
+# Taxi_BJ_hist12_pred12_group1: 30 min, 4 features, 128 nodes
+python main.py --dataset Taxi_BJ_hist12_pred12_group1 --n_route 128 --n_his 12 --n_pred 12 --batch_size 32 --epoch 50 --save 10 --ks 3 --kt 3 --lr 1e-4 --opt RMSProp --inf_mode merge --time_interval 30 --features 4
