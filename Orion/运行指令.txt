@@ -1,0 +1,115 @@
+pip install torch numpy pandas matplotlib seaborn tqdm
+
+步骤 1：数据预处理
+运行 prepareData.py 来预处理数据，生成训练、验证和测试数据集。
+python prepareData.py --config configurations/Orion_PEMS03_config.conf
+这会根据配置文件中的参数（如 graph_signal_matrix_filename 和 adj_filename）加载数据，执行线性插值、归一化等操作，并保存处理后的数据到 .npz 文件。
+
+步骤 2：训练模型
+训练模型有两种方式：单 GPU 和多 GPU。
+
+单 GPU 训练
+使用 train_Orion.py 进行单 GPU 训练：
+python train_Orion.py --config configurations/Orion_PEMS03_config.conf
+
+多 GPU 训练
+使用 torchrun 进行分布式训练（假设有 4 个 GPU）：
+torchrun --nproc-per-node=4 --master-port=12356 train_Orion.py --config configurations/PEMS08_config.conf
+--nproc-per-node=4：指定每个节点（机器）使用的 GPU 数量，这里是 4。
+--master-port=12356：指定分布式训练的主端口，避免端口冲突。
+
+步骤 3：测试模型
+测试模型也有单 GPU 和多 GPU 两种方式。
+
+单 GPU 测试
+使用 test_Orion.py 进行单 GPU 测试：
+python test_Orion.py --config configurations/Orion_PEMS03_config.conf
+
+多 GPU 测试
+使用 torchrun 进行分布式测试：
+torchrun --nproc-per-node=4 --master-port=12356 test_Orion.py --config configurations/PEMS08_config.conf
+
+
+PEMS03
+# 数据预处理
+python prepareData.py --config configurations/Orion_PEMS03_config.conf
+
+# 多 GPU 训练
+torchrun --nproc-per-node=4 --master-port=12356 train_Orion.py --config configurations/Orion_PEMS03_config.conf
+
+# 多 GPU 测试
+torchrun --nproc-per-node=4 --master-port=12356 test_Orion.py --config configurations/Orion_PEMS03_config.conf
+
+
+PEMS04
+# 数据预处理
+python prepareData.py --config configurations/Orion_PEMS04_config.conf
+
+# 多 GPU 训练
+torchrun --nproc-per-node=4 --master-port=12356 train_Orion.py --config configurations/Orion_PEMS04_config.conf
+
+# 多 GPU 测试
+torchrun --nproc-per-node=4 --master-port=12356 test_Orion.py --config configurations/Orion_PEMS04_config.conf
+
+
+PEMS07
+# 数据预处理
+python prepareData.py --config configurations/Orion_PEMS07_config.conf
+
+# 多 GPU 训练
+torchrun --nproc-per-node=4 --master-port=12356 train_Orion.py --config configurations/Orion_PEMS07_config.conf
+
+# 多 GPU 测试
+torchrun --nproc-per-node=4 --master-port=12356 test_Orion.py --config configurations/Orion_PEMS07_config.conf
+
+
+PEMS08 
+# 数据预处理
+python prepareData.py --config configurations/Orion_PEMS08_config.conf
+
+# 多 GPU 训练
+torchrun --nproc-per-node=4 --master-port=12356 train_Orion.py --config configurations/Orion_PEMS08_config.conf
+
+# 多 GPU 测试
+torchrun --nproc-per-node=4 --master-port=12356 test_Orion.py --config configurations/Orion_PEMS08_config.conf
+
+
+
+Taxi_BJ_hist12_pred12_group1 
+# 数据预处理
+python prepareData.py --config configurations/Orion_Taxi_BJ_hist12_pred12_group1_config.conf
+
+# 多 GPU 训练
+torchrun --nproc-per-node=4 --master-port=12356 train_Orion.py --config configurations/Orion_Taxi_BJ_hist12_pred12_group1_config.conf
+
+# 多 GPU 测试
+torchrun --nproc-per-node=4 --master-port=12356 test_Orion.py --config configurations/Orion_Taxi_BJ_hist12_pred12_group1_config.conf
+
+
+NYCBike2_part1 
+# 数据预处理
+python prepareData.py --config configurations/Orion_NYCBike2_part1_config.conf
+
+# 多 GPU 训练
+torchrun --nproc-per-node=4 --master-port=12356 train_Orion.py --config configurations/Orion_NYCBike2_part1_config.conf
+
+# 多 GPU 测试
+torchrun --nproc-per-node=4 --master-port=12356 test_Orion.py --config configurations/Orion_NYCBike2_part1_config.conf
+
+
+NYCTaxi_part1 
+# 数据预处理
+python prepareData.py --config configurations/Orion_NYCTaxi_part1_config.conf
+
+# 多 GPU 训练
+torchrun --nproc-per-node=4 --master-port=12356 train_Orion.py --config configurations/Orion_NYCTaxi_part1_config.conf
+
+# 多 GPU 测试
+torchrun --nproc-per-node=4 --master-port=12356 test_Orion.py --config configurations/Orion_NYCTaxi_part1_config.conf
+
+
+
+原始03文件处理：
+python /root/python_on_hyy/Orion/data/remap_pems03_csv.py --input_csv /root/python_on_hyy/Orion/data/PEMS03.csv --output_csv /root/python_on_hyy/Orion/data/PEMS03_remapped.csv
+
+python /root/python_on_hyy/Orion/data/remap_pems03_npz.py --input_npz /root/python_on_hyy/Orion/data/PEMS03.npz --input_csv /root/python_on_hyy/Orion/data/PEMS03.csv --output_npz /root/python_on_hyy/Orion/data/PEMS03_remapped.npz
