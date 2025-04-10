@@ -25,7 +25,7 @@ Orion 模型支持分布式训练（DistributedDataParallel, DDP），可以在�
 <p align="center">
   <img src="模型架构.png" alt="Orion Model Architecture" width="600">
   <br>
-  <em>Orion 模型架构图（请替换为实际图片链接）</em>
+  <em>Orion 模型架构图 </em>
 </p>
 
 ### 适用场景
