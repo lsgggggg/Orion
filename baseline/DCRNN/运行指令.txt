@@ -1,0 +1,25 @@
+python process_all_datasets.py
+
+
+cd DCRNN
+for dataset in PEMS03 PEMS04 PEMS08 NYCBike2_part1 NYCTaxi_part1 Taxi_BJ_hist12_pred12_group1; do
+    python -m scripts.gen_adj_mx \
+        --sensor_ids_filename=/root/python_on_hyy/data_for_benchmark/${dataset}/graph_sensor_ids.txt \
+        --distances_filename=/root/python_on_hyy/data_for_benchmark/${dataset}/distances_${dataset}.csv \
+        --normalized_k=0.1 \
+        --output_pkl_filename=/root/python_on_hyy/data_for_benchmark/${dataset}/adj_mx.pkl
+done
+
+
+
+python dcrnn_train.py --config_filename=/root/python_on_hyy/data_for_benchmark/PEMS03/dcrnn_PEMS03.yaml
+
+python dcrnn_train.py --config_filename=/root/python_on_hyy/data_for_benchmark/PEMS04/dcrnn_PEMS04.yaml
+
+python dcrnn_train.py --config_filename=/root/python_on_hyy/data_for_benchmark/PEMS08/dcrnn_PEMS08.yaml
+
+python dcrnn_train.py --config_filename=/root/python_on_hyy/data_for_benchmark/NYCBike2_part1/dcrnn_NYCBike2_part1.yaml
+
+python dcrnn_train.py --config_filename=/root/python_on_hyy/data_for_benchmark/NYCTaxi_part1/dcrnn_NYCTaxi_part1.yaml
+
+python dcrnn_train.py --config_filename=/root/python_on_hyy/data_for_benchmark/Taxi_BJ_hist12_pred12_group1/dcrnn_Taxi_BJ_hist12_pred12_group1.yaml
