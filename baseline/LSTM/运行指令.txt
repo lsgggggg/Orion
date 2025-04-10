@@ -1,0 +1,19 @@
+python prepareData.py
+
+python train.py --config /root/python_on_hyy/LSTM/PEMS03_config.conf
+torchrun --nproc_per_node=4 train.py --config /root/python_on_hyy/LSTM/PEMS03_config.conf
+
+python train.py --config /root/python_on_hyy/LSTM/PEMS04_config.conf
+torchrun --nproc_per_node=4 train.py --config /root/python_on_hyy/LSTM/PEMS04_config.conf
+
+python train.py --config /root/python_on_hyy/LSTM/PEMS08_config.conf
+torchrun --nproc_per_node=4 train.py --config /root/python_on_hyy/LSTM/PEMS08_config.conf
+
+python train.py --config /root/python_on_hyy/LSTM/NYCBike2_part1_config.conf
+torchrun --nproc_per_node=4 train.py --config /root/python_on_hyy/LSTM/NYCBike2_part1_config.conf
+
+python train.py --config /root/python_on_hyy/LSTM/NYCTaxi_part1_config.conf
+torchrun --nproc_per_node=4 train.py --config /root/python_on_hyy/LSTM/NYCTaxi_part1_config.conf
+
+python train.py --config /root/python_on_hyy/LSTM/Taxi_BJ_hist12_pred12_group1_config.conf
+torchrun --nproc_per_node=4 train.py --config /root/python_on_hyy/LSTM/Taxi_BJ_hist12_pred12_group1_config.conf
