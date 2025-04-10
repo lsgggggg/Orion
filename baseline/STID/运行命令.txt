@@ -1,0 +1,26 @@
+cd /root/python_on_hyy
+python prepare_data_for_stid.py
+
+# PEMS03
+cd /root/python_on_hyy/STID
+python experiments/train.py --cfg stid/PEMS03.py --gpus '0'
+
+# PEMS04
+cd /root/python_on_hyy/STID
+python experiments/train.py --cfg stid/PEMS04.py --gpus '0'
+
+# PEMS08
+cd /root/python_on_hyy/STID
+python experiments/train.py --cfg stid/PEMS08.py --gpus '0'
+
+# NYCBike2_part1
+cd /root/python_on_hyy/STID
+python experiments/train.py --cfg stid/NYCBike2_part1.py --gpus '0'
+
+# NYCTaxi_part1
+cd /root/python_on_hyy/STID
+python experiments/train.py --cfg stid/NYCTaxi_part1.py --gpus '0'
+
+# Taxi_BJ_hist12_pred12_group1
+cd /root/python_on_hyy/STID
+python experiments/train.py --cfg stid/Taxi_BJ_hist12_pred12_group1.py --gpus '0'
