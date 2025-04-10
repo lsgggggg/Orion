@@ -23,7 +23,7 @@
 Orion 模型支持分布式训练（DistributedDataParallel, DDP），可以在多 GPU 环境下高效运行，同时提供注意力权重的可视化功能，便于模型解释和调试。
 
 <p align="center">
-  <img src="https://via.placeholder.com/600x300.png?text=Orion+Model+Architecture" alt="Orion Model Architecture" width="600">
+  <img src="模型架构.png" alt="Orion Model Architecture" width="600">
   <br>
   <em>Orion 模型架构图（请替换为实际图片链接）</em>
 </p>
