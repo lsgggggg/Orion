@@ -1,0 +1,21 @@
+python prepareData.py --num_of_weeks 1 --num_of_days 1 --num_of_hours 1 --num_for_predict 12
+
+python check_data.py
+
+# PEMS03
+python train_ASTGCN_r.py --config configurations/PEMS03_astgcn.conf
+
+# PEMS04
+python train_ASTGCN_r.py --config configurations/PEMS04_astgcn.conf
+
+# PEMS08
+python train_ASTGCN_r.py --config configurations/PEMS08_astgcn.conf
+
+# NYCBike2_part1
+python train_ASTGCN_r.py --config configurations/NYCBike2_part1_astgcn.conf
+
+# NYCTaxi_part1
+python train_ASTGCN_r.py --config configurations/NYCTaxi_part1_astgcn.conf
+
+# Taxi_BJ_hist12_pred12_group1
+python train_ASTGCN_r.py --config configurations/Taxi_BJ_hist12_pred12_group1_astgcn.conf
