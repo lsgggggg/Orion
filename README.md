@@ -357,7 +357,7 @@ Orion 模型支持注意力权重的可视化（需在配置文件中启用）�
 - **ASTGCN**：Attention Based Spatial-Temporal Graph Convolutional Networks for Traffic Flow Forecasting.
 
 如果您在使用过程中有任何问题或建议，欢迎通过以下方式联系我们：
-- **邮箱**：example@orion-model.org
+- **邮箱**：lishiguang8073@gamil.com
 - **GitHub**：https://github.com/orion-model
 
 祝您实验顺利，取得优异成果！🎉
